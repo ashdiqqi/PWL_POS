@@ -6,41 +6,277 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PenjualandetailSeeder extends Seeder
+class PenjualanDetailSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $penjualan_details = [];
+        $data = [
+            //Transaksi 1
+            [
+                'penjualan_id' => 1,
+                'barang_id' => 1,
+                'harga' => 5000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 1,
+                'barang_id' => 2,
+                'harga' => 7000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 1,
+                'barang_id' => 3,
+                'harga' => 8000,
+                'jumlah' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
 
-// Generate 30 penjualan_detail records
-for ($i = 1; $i <= 30; $i++) {
-    // Set penjualan_id
-    $penjualan_id = $i;
+            //Transaksi 2
+            [
+                'penjualan_id' => 2,
+                'barang_id' => 2,
+                'harga' => 7000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 2,
+                'barang_id' => 4,
+                'harga' => 15000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 2,
+                'barang_id' => 5,
+                'harga' => 8000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
 
-    // Set 3 random barang_id untuk setiap penjualan
-    $barang_ids = range(1, 10); // Assuming there are 10 barang in the database
-    shuffle($barang_ids);
-    $barang_ids = array_slice($barang_ids, 0, 3);
+            //Transaksi 3
+            [
+                'penjualan_id' => 3,
+                'barang_id' => 8,
+                'harga' => 5000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 3,
+                'barang_id' => 9,
+                'harga' => 8000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
 
-    // Generate penjualan_detail for each barang_id
-    foreach ($barang_ids as $barang_id) {
-        $penjualan_details[] = [
-            'detail_id' => ($i - 1) * 3 + $barang_id, // Generate unique detail_id
-            'penjualan_id' => $penjualan_id,
-            'barang_id' => $barang_id,
-            'harga' => rand(1000, 10000), // Random harga for each barang
-            'jumlah' => rand(1, 10), // Random jumlah for each barang
+            [
+                'penjualan_id' => 3,
+                'barang_id' => 1,
+                'harga' => 5000,
+                'jumlah' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            //Transaksi 4
+            [
+                'penjualan_id' => 4,
+                'barang_id' => 2,
+                'harga' => 7000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 4,
+                'barang_id' => 3,
+                'harga' => 10000,
+                'jumlah' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 4,
+                'barang_id' => 4,
+                'harga' => 15000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            //Transaksi 5
+            [
+                'penjualan_id' => 5,
+                'barang_id' => 5,
+                'harga' => 8000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 5,
+                'barang_id' => 6,
+                'harga' => 4000,
+                'jumlah' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 5,
+                'barang_id' => 7,
+                'harga' => 5000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            //Transaksi 6
+            [
+                'penjualan_id' => 6,
+                'barang_id' => 8,
+                'harga' => 5000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 6,
+                'barang_id' => 9,
+                'harga' => 8000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 6,
+                'barang_id' => 10,
+                'harga' => 8000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            //Transaksi 7
+            [
+                'penjualan_id' => 7,
+                'barang_id' => 7,
+                'harga' => 5000,
+                'jumlah' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 7,
+                'barang_id' => 6,
+                'harga' => 4000,
+                'jumlah' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 7,
+                'barang_id' => 3,
+                'harga' => 8000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            //Transaksi 8
+            [
+                'penjualan_id' => 8,
+                'barang_id' => 10,
+                'harga' => 8000,
+                'jumlah' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 8,
+                'barang_id' => 5,
+                'harga' => 8000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 8,
+                'barang_id' => 1,
+                'harga' => 5000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            //Transaksi 9
+            [
+                'penjualan_id' => 9,
+                'barang_id' => 8,
+                'harga' => 5000,
+                'jumlah' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 9,
+                'barang_id' => 4,
+                'harga' => 15000,
+                'jumlah' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 9,
+                'barang_id' => 3,
+                'harga' => 10000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            //Transaksi 10
+            [
+                'penjualan_id' => 10,
+                'barang_id' => 9,
+                'harga' => 8000,
+                'jumlah' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 10,
+                'barang_id' => 4,
+                'harga' => 15000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'penjualan_id' => 10,
+                'barang_id' => 2,
+                'harga' => 7000,
+                'jumlah' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ];
-    }
-}
 
-// Simpan data ke dalam database
-foreach ($penjualan_details as $penjualan_detail) {
-    DB::table('t_penjualan_detail')->insert($penjualan_detail);
-}
-
+        // Masukkan data seed ke dalam tabel t_penjualan_detail
+        DB::table('t_penjualan_detail')->insert($data);
     }
 }
